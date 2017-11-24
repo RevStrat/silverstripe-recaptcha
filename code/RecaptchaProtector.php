@@ -1,4 +1,7 @@
 <?php
+
+use SilverStripe\SpamProtection\SpamProtector;
+
 /**
  * @package recaptcha
  */

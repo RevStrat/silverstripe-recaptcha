@@ -1,4 +1,10 @@
 <?php
+
+use SilverStripe\Forms\FormField;
+use SilverStripe\Core\Extensible;
+use SilverStripe\Core\Injector\Injectable;
+use SilverStripe\Core\Config\Configurable;
+
 /**
  * @package recaptcha
  */
@@ -277,9 +283,12 @@ class RecaptchaField extends FormField
 /**
  * Simple HTTP client, mainly to make it mockable.
  */
-class RecaptchaField_HTTPClient extends Object
+class RecaptchaField_HTTPClient
 {
-
+    use Extensible;
+    use Injectable;
+    use Configurable;
+    
     /**
      * @param String $url
      * @param $postVars
